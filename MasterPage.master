@@ -1,0 +1,573 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+    <title>The Home Spa</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+
+    <link href="../assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <!-- This page CSS -->
+    <!-- chartist CSS -->
+    <link href="../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet" />
+    <link href="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet" />
+    <!--c3 CSS -->
+    <link href="../assets/plugins/c3-master/c3.min.css" rel="stylesheet" />
+    <!--Toaster Popup message CSS -->
+    <link href="../assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet" />
+
+    <!--fancy box-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+    
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <!-- Dashboard 1 Page CSS -->
+    <link href="/css/pages/dashboard1.css" rel="stylesheet" />
+    <!-- You can change the theme colors from here -->
+    <link href="/css/colors/default-dark.css" id="theme" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <form id="form1" runat="server">
+
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">The Home Spa</p>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+            <header class="topbar">
+                <nav id="NavID" runat="server" class="navbar top-navbar navbar-expand-md navbar-light">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">
+                            <!-- Logo icon -->
+                            <b>
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <!--<img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
+                                <!-- Light Logo icon -->
+                                <!--<img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />-->
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+                            <!-- dark Logo text -->
+                            <!--<span><img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />-->
+                            <!-- Light Logo text -->
+                            <!-- <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span>-->
+                            <span>The Home Spa</span>
+                        </a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-collapse">
+                        <!-- ============================================================== -->
+                        <!-- toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav mr-auto">
+                            <!-- This is  -->
+                            <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                            <li class="nav-item"><a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+
+                        </ul>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav my-lg-0">
+                            <!-- ============================================================== -->
+                            <!-- Search -->
+                            <!-- ============================================================== -->
+                            <!--<li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                        </li>-->
+                            <!-- ============================================================== -->
+                            <!-- Comment -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-message"></i>
+                                    <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
+                                    <ul>
+                                        <li>
+                                            <div class="drop-title">Notifications</div>
+                                        </li>
+                                        <li>
+                                            <div class="message-center">
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Luanch Admin</h5>
+                                                        <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-success btn-circle"><i class="ti-calendar"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Event today</h5>
+                                                        <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-info btn-circle"><i class="ti-settings"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Settings</h5>
+                                                        <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="btn btn-primary btn-circle"><i class="ti-user"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Pavan kumar</h5>
+                                                        <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link text-center" href="javascript:void(0);"><strong>Check all notifications</strong> <i class="fa fa-angle-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- End Comment -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- Messages -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-email"></i>
+                                    <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                                </a>
+                                <div class="dropdown-menu mailbox dropdown-menu-right animated bounceInDown" aria-labelledby="2">
+                                    <ul>
+                                        <li>
+                                            <div class="drop-title">You have 4 new messages</div>
+                                        </li>
+                                        <li>
+                                            <div class="message-center">
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="user-img">
+                                                        <img src="../assets/images/users/1.jpg" alt="user" class="img-circle"/>
+                                                        <span class="profile-status online pull-right"></span>
+                                                    </div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Pavan kumar</h5>
+                                                        <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="user-img">
+                                                        <img src="../assets/images/users/2.jpg" alt="user" class="img-circle"/>
+                                                        <span class="profile-status busy pull-right"></span>
+                                                    </div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Sonu Nigam</h5>
+                                                        <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="user-img">
+                                                        <img src="../assets/images/users/3.jpg" alt="user" class="img-circle"/>
+                                                        <span class="profile-status away pull-right"></span>
+                                                    </div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Arijit Sinh</h5>
+                                                        <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                                    </div>
+                                                </a>
+                                                <!-- Message -->
+                                                <a href="#">
+                                                    <div class="user-img">
+                                                        <img src="../assets/images/users/4.jpg" alt="user" class="img-circle"/>
+                                                        <span class="profile-status offline pull-right"></span>
+                                                    </div>
+                                                    <div class="mail-contnet">
+                                                        <h5>Pavan kumar</h5>
+                                                        <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link text-center" href="javascript:void(0);"><strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- End Messages -->
+                            <!-- ============================================================== -->
+
+                            <!-- ============================================================== -->
+                            <!-- Language -->
+                            <!-- ============================================================== -->
+                            <!--<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated bounceInDown"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
+                        </li>-->
+                            <!-- ============================================================== -->
+                            <!-- Profile -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../assets/images/users/4.jpg" alt="user" class="profile-pic" /></a>
+                                <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                    <ul class="dropdown-user">
+                                        <li>
+                                            <div class="dw-user-box">
+                                                <div class="u-img">
+                                                    <img src="../assets/images/users/4.jpg" alt="user"/>
+                                                </div>
+                                                <div class="u-text">
+                                                    <h4><asp:Label ID="lblusername" runat="server"></asp:Label></h4>
+                                                    <p class="text-muted"><asp:Label ID="lbluseremail" runat="server"></asp:Label></p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!--<li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                                    <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+                                    <li><a href="#"><i class="ti-email"></i> Inbox</a></li>-->
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#"><i class="ti-settings"></i>Account Setting</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="LogOut.aspx"><i class="fa fa-power-off"></i>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- ============================================================== -->
+            <!-- End Topbar header -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <aside class="left-sidebar">
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <ul id="sidebarnav">
+                            <li>
+                                <a class="waves-effect waves-dark" href="/home" aria-expanded="false">
+                                    <i class="mdi mdi-chart-bar"></i>
+                                    <span class="hide-menu">Home </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-dark" href="/calendar" aria-expanded="false">
+                                    <i class="mdi mdi-calendar-range"></i>
+                                    <span class="hide-menu">Calendar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <i class="mdi mdi-file-chart"></i>
+                                    <span class="hide-menu">Sales</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="/dailysales">Daily Sales</a></li>
+                                    <li><a href="/appointments">Appointments</a></li>
+                                    <li><a href="/invoices">Invoices</a></li>
+                                    <li><a href="/payments">Payments</a></li>
+                                    <li><a href="/vouchers">Vouchers</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-dark" href="/Client" aria-expanded="false">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                    <span class="hide-menu">Clients</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-dark" href="/messages" aria-expanded="false">
+                                    <i class="mdi mdi-email-variant"></i>
+                                    <span class="hide-menu">Messages</span>
+                                </a>
+                            </li>     
+                            
+
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <i class="mdi mdi-account-outline"></i>
+                                    <span class="hide-menu">Staff</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="/team">Team</a></li>
+                                    <li><a href="/workinghours">Working hours</a></li>
+                                    <li><a href="/ClosedDates">Closed Dates</a></li>
+                                    <li><a href="/staff">Staff Members</a></li>
+                                    <li><a href="/permissionlevels">Permission Levels</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <i class="mdi mdi-format-list-numbers"></i>
+                                    <span class="hide-menu">Services</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="/servicegroups">Groups</a></li>
+                                    <li><a href="/services">All Services</a></li>
+                                    <li><a href="/packages">All Packages</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <i class="mdi mdi-package-variant-closed"></i>
+                                    <span class="hide-menu">Inventory</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="/products">Products</a></li>
+                                    <li><a href="orders.html">Orders</a></li>
+                                    <li><a href="/brand">Brands</a></li>
+                                    <li><a href="/category">Categories</a></li>
+                                    <li><a href="/supplier">Suppliers</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <i class="mdi mdi-chart-line"></i>
+                                    <span class="hide-menu">Analytics</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li><a href="all-reports.html">All reports</a></li>
+                                </ul>
+                            </li>
+                            <!--<li> 
+                        	<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                            	<i class="mdi mdi-cloud-download"></i>
+                            	<span class="hide-menu">Online Booking</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="booking-button.html">BOOKING BUTTON</a></li>
+                                <li><a href="facebook.html">FACEBOOK</a></li>
+                                <li><a href="embed-widget.html">EMBED WIDGET</a></li>
+                            </ul>
+                        </li>-->
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <i class="mdi mdi-settings"></i>
+                                    <span class="hide-menu">Setup</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="/accounts">Account</a></li>
+                                    <li><a href="/client">Client</a></li>
+                                    <li><a href="/pos">POS</a></li>  
+                                    <li><a href="/company">Company</a></li>
+                                    <li><a href="/country">Country</a></li>
+                                   
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+            <!-- ============================================================== -->
+            <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- Page wrapper  -->
+            <!-- ============================================================== -->
+
+            <div class="page-wrapper">
+
+                <div id="bodyContainer">
+                    <asp:ContentPlaceHolder ID="toppart" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="body" runat="server"></asp:ContentPlaceHolder>
+                </div>
+
+                <!-- ============================================================== -->
+                <!-- footer -->
+                <!-- ============================================================== -->
+                <footer class="footer">Design and developed by <a href="http://www.royex.ae/" target="_blank">www.royex.ae</a> </footer>
+                <!-- ============================================================== -->
+                <!-- End footer -->
+                <!-- ============================================================== -->
+            </div>
+
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Wrapper -->
+        <!-- ============================================================== -->
+
+
+        <!-- ============================================================== -->
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="../assets/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap popper Core JavaScript -->
+        <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+        <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="/js/perfect-scrollbar.jquery.min.js"></script>
+        <!--Wave Effects -->
+        <script src="/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="/js/sidebarmenu.js"></script>
+
+        <!--fancy box-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js"></script>
+
+        <!--Custom JavaScript -->
+        <script src="/js/custom.min.js"></script>
+        <!-- ============================================================== -->
+        <!-- This page plugins -->
+        <!-- ============================================================== -->
+        <!--sparkline JavaScript -->
+        <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+        <script src="../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script>
+            jQuery('.mydatepicker, #datepicker').datepicker();
+            jQuery('#datepicker-autoclose').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            });
+        </script>
+
+
+        <!--morris JavaScript -->
+        <script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
+        <script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+        <!--c3 JavaScript -->
+        <script src="../assets/plugins/d3/d3.min.js"></script>
+        <script src="../assets/plugins/c3-master/c3.min.js"></script>
+        <!-- Popup message jquery -->
+        <script src="../assets/plugins/toast-master/js/jquery.toast.js"></script>
+        <!-- Chart JS -->
+        <script src="js/dashboard1.js"></script>
+        <script>
+            $(function () {
+                "use strict";
+                // ============================================================== 
+                // Sales overview
+                // ============================================================== 
+                new Chartist.Line('#sales-overview2', {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+                   , series: [
+                     { meta: "Earning ($)", data: [0, 150, 110, 240, 200, 200, 300] }
+                   ]
+                }, {
+                    low: 0
+                   , high: 400
+                   , showArea: true
+                   , divisor: 10
+                   , lineSmooth: false
+                   , fullWidth: true
+                   , showLine: true
+                   , chartPadding: 30
+                   , axisX: {
+                       showLabel: true
+                       , showGrid: false
+                       , offset: 50
+                   }
+                   , plugins: [
+                       Chartist.plugins.tooltip()
+                   ],
+                    // As this is axis specific we need to tell Chartist to use whole numbers only on the concerned axis
+                    axisY: {
+                        onlyInteger: true
+                        , showLabel: true
+                        , scaleMinSpace: 50
+                        , showGrid: true
+                        , offset: 10,
+                        labelInterpolationFnc: function (value) {
+                            return (value / 100) + 'k'
+                        },
+
+                    }
+
+                });
+
+
+                new Chartist.Bar('#ct-sales3-chart', {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    series: [
+                        [400, 120, 140, 130, 200, 150, 140, 130, 300, 120, 140, 150],
+                        [200, 188, 242, 300, 200, 400, 230, 300, 200, 400, 180, 300],
+                        [100, 200, 400, 600, 100, 200, 400, 370, 240, 200, 280, 330]
+                    ]
+                }, {
+                    stackBars: true,
+                    axisX: {
+                        showGrid: false
+                    },
+                    axisY: {
+                        labelInterpolationFnc: function (value) {
+                            return (value);
+                        },
+                        showGrid: true
+                    }, plugins: [
+                        Chartist.plugins.tooltip()
+                    ],
+                }).on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        data.element.attr({
+                            style: 'stroke-width: 15px'
+                        });
+                    }
+                });
+
+            });
+        </script>
+        <!-- ============================================================== -->
+        <!-- Style switcher -->
+        <!-- ============================================================== -->
+        <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+
+        <asp:ContentPlaceHolder ID="script" runat="server"></asp:ContentPlaceHolder>
+    </form>
+</body>
+
+</html>
